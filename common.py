@@ -19,3 +19,13 @@ def dirs(dir):
 
 def files(dir):
 	return os.listdir('./' + dir)
+
+def confirm():
+	goahead = raw_input( common.term_colours( "Are you happy with your selection? Y or N", "green" ) )
+	if goahead == "Y":
+		return True
+	elif goahead == "N":
+		return False
+	else:
+		print "Sorry you need to enter a Y or an N"
+		common.confim()
