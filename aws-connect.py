@@ -11,6 +11,8 @@ import sys
 import common
 
 def main():
+	quit = False
+
 	# Get a list of hosts
 	hosts = common.files('aws/hosts')
 
@@ -48,7 +50,7 @@ def main():
 		i += 1
 
 	# Ask user to select a host
-	chosen_key = keys[int( raw_input("Choose a Key:") ) -1]
+	chosen_key = "./aws/keys/" + keys[int( raw_input("Choose a Key:") ) -1]
 
 	# Ask the user to confirm they are happy with the action to be taken
 	print "You have chosen the following:"
@@ -59,7 +61,7 @@ def main():
 	confirm = common.confirm()
 
 	if confirm == True:
-		common.ssh_connect( chosen_host, username, key )
+		common.ssh_connect( chosen_host, username, chosen_key )
 	elif confirm == False:
 		print "Start again"
 		main()
