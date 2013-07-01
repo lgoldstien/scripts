@@ -29,3 +29,14 @@ def confirm():
 	else:
 		print "Sorry you need to enter a Y or an N"
 		confirm()
+
+def make_dir(path):
+	if ( os.path.exists(path) == True):
+		return False
+	else:
+		if( os.makedirs(path) == True):
+			return True
+		else:
+			return False
+
+
