@@ -10,7 +10,7 @@ def ssh_connect ( host, username, key ):
 	os.system("ssh -i " + key + " " + username + "@" + host)
 
 def term_colours ( string, colour ):
-    colours = { 'red': "\033[91m", 'green': "\033[32m", 'blue': "\033[34m" }
+    colours = { 'red': "\033[91m", 'green': "\033[32m", 'blue': "\033[34m", 'yellow': "\033[33m", 'magenta': "\033[35m", 'cyan': "\033[36m" }
     stop = "\033[00m"
     return colours[colour] + string + stop
 
